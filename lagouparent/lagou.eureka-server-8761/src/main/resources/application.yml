@@ -1,0 +1,16 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+    #eureka 客户端配置和server交互
+eureka:
+  client:
+    service-url:
+      #集群模式下defaultZOne：应该指向其他的eureka server
+      defaultZone:  http://eurekaserverB:8762/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: eurekaserverA #当前eureka的主机名
+
